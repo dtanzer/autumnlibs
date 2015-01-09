@@ -1,0 +1,6 @@
+include ':webmvc', ':webmvc-rest', ':webmvc-jsxp',
+		':router',
+		':value-provider-servlet',
+		':example-webmvc-jsxp', ':example-webmvc-rest'
+
+rootProject.name = 'autumnlibs'

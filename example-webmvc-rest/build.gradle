@@ -1,0 +1,5 @@
+dependencies {
+	compile 'io.undertow:undertow-core:1.2.0.Beta6'
+	compile 'io.undertow:undertow-servlet:1.2.0.Beta6'
+	compile project(':webmvc-rest')
+}

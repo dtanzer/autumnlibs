@@ -1,0 +1,29 @@
+apply plugin: 'war'
+
+buildscript {
+	dependencies {
+		classpath fileTree(dir: 'libs',
+				includes: ['jsxp-web-2.1.jar'])
+	}
+}
+
+dependencies {
+	compile project(':webmvc-jsxp')
+	compile files('libs/jsxp-web-2.1.jar')
+	compile 'io.undertow:undertow-core:1.2.0.Beta6'
+	compile 'io.undertow:undertow-servlet:1.2.0.Beta6'
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src/generated/java'
+			srcDir 'src/main/webapp'
+		}
+	}
+}
+task jsxpGenerate << {
+	println("Generating JSXP view controllers...")
+	org.jsxp.framework.ViewControllerGenerator.main(
+			[ "example-webmvc-jsxp", "src/main/webapp", "src/generated/java", "org.autumnlibs.examples.webmvc.jsxp.generated" ].toArray(new String[0]));
+}

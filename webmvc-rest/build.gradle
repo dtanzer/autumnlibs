@@ -1,0 +1,6 @@
+dependencies {
+	compile project(':webmvc')
+	compile project(':value-provider-servlet')
+	compile 'javax.servlet:javax.servlet-api:3.0.1'
+	compile 'com.google.code.gson:gson:2.3.1'
+}

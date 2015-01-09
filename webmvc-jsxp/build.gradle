@@ -1,0 +1,5 @@
+dependencies {
+	compile project(':webmvc')
+	compile project(':value-provider-servlet')
+	compile files('libs/jsxp-web-2.1.jar')
+}
